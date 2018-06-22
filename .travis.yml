@@ -5,12 +5,13 @@ services:
 cache:
   directories:
   - "$HOME/.cache"
+  - "$HOME/.m2"
 
 addons:
   sonarcloud:
     organization: "hche608-github" # the key of the org you chose at step #3
     token:
-      secure: "${env.sonar}" # encrypted value of your token
+      secure: "${sonar}" # encrypted value of your token
 
 deploy:
   provider: script
