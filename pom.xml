@@ -186,7 +186,7 @@
                     <!-- matches distribution management repository url above -->
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
                     <!-- remote branch name -->
-                    <branch>refs/heads/mvn-repo</branch>
+                    <branch>refs/heads/master</branch>
                     <!-- If you remove this then the old artifact will be removed and new
                      one will replace. But with the merge tag you can just release by changing
                                                       the version -->

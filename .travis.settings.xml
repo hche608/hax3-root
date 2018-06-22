@@ -16,8 +16,11 @@
             </activation>
             <repositories>
                 <repository>
-                    <id>mvn-repo</id>
-                    <url>https://raw.github.com/hche608/mvn-repo/mvn-repo/</url>
+                    <id>internal.repo</id>
+                    <url>https://github.com/hche608/mvn-repo/raw/master/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
                     <snapshots>
                         <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>

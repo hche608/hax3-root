@@ -23,8 +23,7 @@
 hs_err_pid*
 ### Java template
 # Compiled class file
-*.class
-
+target/
 
 
 ### JetBrains template
