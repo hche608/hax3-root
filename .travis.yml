@@ -4,8 +4,9 @@ services:
   - docker
 cache:
   directories:
-  - "$HOME/.cache"
-  - "$HOME/.m2"
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
 
 addons:
   sonarcloud:
@@ -15,7 +16,7 @@ addons:
 
 deploy:
   provider: script
-  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=https://sonarcloud.io && mvn clean deploy"
+  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.organization=hche608-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${sonar} && mvn clean deploy"
   skip_cleanup: true
   on:
     tags: true
