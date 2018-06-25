@@ -1,25 +1,25 @@
 package unit.me.hax3.acceptance.step;
 
 import me.hax3.acceptance.step.GenericHolder;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static shiver.me.timbers.data.random.RandomThings.someThing;
 
-class GenericHolderTest {
+public class GenericHolderTest {
 
     private GenericHolder<Object> holder;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         holder = new GenericHolder<>();
     }
 
     @Test
-    void Can_set_a_value() {
+    public void Can_set_a_value() {
 
         final Object expected = someThing();
 
@@ -34,7 +34,7 @@ class GenericHolderTest {
     }
 
     @Test
-    void Generic_holder_has_to_string() {
+    public void Generic_holder_has_to_string() {
 
         final Object value = someThing();
 

@@ -3,11 +3,11 @@ package unit.me.hax3.acceptance.step;
 import cucumber.api.Scenario;
 import me.hax3.acceptance.step.GenericHolder;
 import me.hax3.acceptance.step.Hooks;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -22,8 +22,8 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 import static shiver.me.timbers.data.random.RandomStrings.someString;
 import static shiver.me.timbers.data.random.RandomThings.someThing;
 
-@ExtendWith(MockitoExtension.class)
-class HooksTest {
+@RunWith(MockitoJUnitRunner.class)
+public class HooksTest {
 
     @Mock
     private List<GenericHolder> holders;
@@ -32,7 +32,7 @@ class HooksTest {
     private Hooks hooks;
 
     @Test
-    void Setup_does_nothing() {
+    public void Setup_does_nothing() {
         final Scenario scenario = mock(Scenario.class);
         // Given
         given(scenario.getName()).willReturn(someString());
@@ -43,7 +43,7 @@ class HooksTest {
     }
 
     @Test
-    void Tear_down_will_not_log_any_holders_if_the_scenario_passes() {
+    public void Tear_down_will_not_log_any_holders_if_the_scenario_passes() {
 
         final Scenario scenario = mock(Scenario.class);
 
@@ -58,7 +58,7 @@ class HooksTest {
     }
 
     @Test
-    void Tear_down_will_log_all_holders_if_the_scenario_fails() {
+    public void Tear_down_will_log_all_holders_if_the_scenario_fails() {
 
         final Scenario scenario = mock(Scenario.class);
 
@@ -73,7 +73,7 @@ class HooksTest {
     }
 
     @Test
-    void Tear_down_will_log_browser_logs_if_the_scenario_fails() {
+    public void Tear_down_will_log_browser_logs_if_the_scenario_fails() {
 
         final Scenario scenario = mock(Scenario.class);
 
