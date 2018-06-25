@@ -19,6 +19,6 @@ public class GenericHolder<T> {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + ":\n" + value;
+        return getClass().getSimpleName() + ":%n" + value;
     }
 }

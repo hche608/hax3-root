@@ -29,8 +29,11 @@ public class Hooks {
     private List<GenericHolder> holders = emptyList();
 
     @Before
-    public void setup() {
+    public void setup(Scenario scenario) {
         log.info("Scenario Start.");
+        System.out.println("------------------------------");
+        System.out.println(scenario.getName() + " Status - " + scenario.getStatus());
+        System.out.println("------------------------------");
     }
 
     @After
