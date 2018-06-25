@@ -12,8 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static cucumber.api.Result.Type.AMBIGUOUS;
-import static cucumber.api.Result.Type.PASSED;
+import static gherkin.formatter.model.Result.FAILED;
+import static gherkin.formatter.model.Result.PASSED;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -36,7 +36,7 @@ class HooksTest {
         final Scenario scenario = mock(Scenario.class);
         // Given
         given(scenario.getName()).willReturn(someString());
-        given(scenario.getStatus()).willReturn(someThing(AMBIGUOUS, PASSED));
+        given(scenario.getStatus()).willReturn(someThing(FAILED, PASSED));
 
         // When
         hooks.setup(scenario);

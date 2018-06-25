@@ -31,9 +31,10 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario) {
         log.info("Scenario Start.");
-        System.out.println("------------------------------");
-        System.out.println(scenario.getName() + " Status - " + scenario.getStatus());
-        System.out.println("------------------------------");
+        final String x = scenario.getName() + " Status --> " + scenario.getStatus();
+        printLine(x.length());
+        log.info(x);
+        printLine(x.length());
     }
 
     @After
@@ -42,5 +43,12 @@ public class Hooks {
         if (scenario.isFailed()) {
             holders.forEach(holder -> log.error(holder.toString()));
         }
+    }
+
+    private void printLine(int length) {
+        for (int i = 1; i < length; i++) {
+            log.info("-");
+        }
+        log.info("-");
     }
 }

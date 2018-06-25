@@ -1,6 +1,6 @@
 <project
-        xmlns="http://maven.apache.org/POM/4.0.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://maven.apache.org/POM/4.0.0"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <licenses>
         <license>
@@ -36,7 +36,7 @@
         <jackson.version>2.9.6</jackson.version>
         <junit.jupiter.version>5.2.0</junit.jupiter.version>
         <junit.platform.version>1.2.0</junit.platform.version>
-        <cucumber.version>3.0.2</cucumber.version>
+        <cucumber.version>1.2.5</cucumber.version>
         <mockito.version>2.19.0</mockito.version>
         <sonar.exclusions>**/*Configuration.*,**/*IT*.*</sonar.exclusions>
     </properties>
