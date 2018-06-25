@@ -13,6 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
+        format = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
         monochrome = true,
         features = "Features",
         tags = {"~@wip"}

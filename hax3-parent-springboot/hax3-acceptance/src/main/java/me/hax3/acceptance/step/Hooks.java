@@ -15,6 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
+import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
@@ -31,10 +32,7 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario) {
         log.info("Scenario Start.");
-        final String x = scenario.getName() + " Status --> " + scenario.getStatus();
-        printLine(x.length());
-        log.info(x);
-        printLine(x.length());
+        log.info(format("{%s} Status --> {%s}%n", scenario.getName(), scenario.getStatus()));
     }
 
     @After
@@ -45,10 +43,4 @@ public class Hooks {
         }
     }
 
-    private void printLine(int length) {
-        for (int i = 1; i < length; i++) {
-            log.info("-");
-        }
-        log.info("-");
-    }
 }
