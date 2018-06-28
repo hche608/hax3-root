@@ -12,15 +12,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static gherkin.formatter.model.Result.FAILED;
-import static gherkin.formatter.model.Result.PASSED;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verifyZeroInteractions;
-import static shiver.me.timbers.data.random.RandomStrings.someString;
-import static shiver.me.timbers.data.random.RandomThings.someThing;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HooksTest {
@@ -33,13 +29,9 @@ public class HooksTest {
 
     @Test
     public void Setup_does_nothing() {
-        final Scenario scenario = mock(Scenario.class);
-        // Given
-        given(scenario.getName()).willReturn(someString());
-        given(scenario.getStatus()).willReturn(someThing(FAILED, PASSED));
 
         // When
-        hooks.setup(scenario);
+        hooks.setup();
     }
 
     @Test

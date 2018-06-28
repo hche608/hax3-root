@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
@@ -29,9 +28,8 @@ public class Hooks {
     private List<GenericHolder> holders = emptyList();
 
     @Before
-    public void setup(Scenario scenario) {
+    public void setup() {
         log.info("Scenario Start.");
-        log.info(format("{%s} Status --> {%s}%n", scenario.getName(), scenario.getStatus()));
     }
 
     @After
