@@ -31,7 +31,7 @@ public class Hooks {
     @Before
     public void setup(Scenario scenario) {
         log.info("Scenario Start.");
-        log.info(format("{%s} Status --> {%s}%n", scenario.getName(), scenario.getStatus()));
+        log.info(format("%s Status --> %s", scenario.getName(), scenario.getStatus()));
     }
 
     @After
