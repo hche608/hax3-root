@@ -2,7 +2,7 @@
 <configuration>
     <Appenders>
         <Console name="CONSOLE" target="system_OUT">
-            <PatternLayout charset="UTF-8" pattern="[%-5p] %d %c - %m%n"/>
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{2} (%F:%L) - %m%n"/>
         </Console>
     </Appenders>
 
