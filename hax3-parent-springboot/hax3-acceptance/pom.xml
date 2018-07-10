@@ -16,11 +16,6 @@
 
     <name>${project.artifactId}</name>
 
-    <properties>
-        <cucumber.version>1.2.5</cucumber.version>
-        <sonar.exclusions>**/*Configuration.*,**/*IT*.*</sonar.exclusions>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -49,15 +44,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
@@ -70,24 +57,30 @@
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.shiver-me-timbers</groupId>
-            <artifactId>smt-random</artifactId>
-            <version>1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.shiver-me-timbers</groupId>
-            <artifactId>smt-matchers</artifactId>
-            <version>1.2</version>
-        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>com.github.shiver-me-timbers</groupId>-->
+        <!--<artifactId>smt-random</artifactId>-->
+        <!--<version>1.8</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.github.shiver-me-timbers</groupId>-->
+        <!--<artifactId>smt-matchers</artifactId>-->
+        <!--<version>1.2</version>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

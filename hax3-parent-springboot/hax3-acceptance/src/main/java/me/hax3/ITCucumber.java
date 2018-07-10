@@ -11,10 +11,6 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 @EnableAutoConfiguration
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"},
-        monochrome = true,
-        tags = {"~@wip"}
-)
+@CucumberOptions(plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber-json-report.json"})
 public class ITCucumber {
 }
