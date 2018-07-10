@@ -12,8 +12,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static gherkin.formatter.model.Result.FAILED;
-import static gherkin.formatter.model.Result.PASSED;
+import static cucumber.api.Result.Type.FAILED;
+import static cucumber.api.Result.Type.PASSED;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -58,6 +58,7 @@ public class HooksTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void Tear_down_will_log_all_holders_if_the_scenario_fails() {
 
         final Scenario scenario = mock(Scenario.class);
@@ -73,6 +74,7 @@ public class HooksTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void Tear_down_will_log_browser_logs_if_the_scenario_fails() {
 
         final Scenario scenario = mock(Scenario.class);
