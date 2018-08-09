@@ -10,14 +10,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>me.hax3.aws</groupId>
     <artifactId>hax3-parent-aws</artifactId>
-
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <aws.sdk.version>1.11.350</aws.sdk.version>
-        <aws.log4j2.version>1.1.0</aws.log4j2.version>
-    </properties>
+    <!--<properties>-->
+        <!--<aws.sdk.version>1.11.350</aws.sdk.version>-->
+        <!--<aws.log4j2.version>1.1.0</aws.log4j2.version>-->
+    <!--</properties>-->
 
     <packaging>pom</packaging>
 
