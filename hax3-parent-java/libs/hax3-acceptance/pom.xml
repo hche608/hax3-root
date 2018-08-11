@@ -4,8 +4,9 @@
 
     <parent>
         <groupId>me.hax3.parent</groupId>
-        <artifactId>hax3-parent-springboot</artifactId>
+        <artifactId>hax3-parent-java</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <groupId>me.hax3.acceptance</groupId>
@@ -23,8 +24,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>**/IT*.*</exclude>
-                        <exclude>**/*Configuration.*</exclude>
+                        <exclude>${sonar.exclusions}</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -35,7 +35,7 @@
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.testOutputDirectory}</additionalClasspathElement>
                     </additionalClasspathElements>
-                    <testClassesDirectory>${project.build.outputDirectory}</testClassesDirectory>
+                    <testClassesDirectory>target/classes</testClassesDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -59,7 +59,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -71,16 +70,5 @@
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
-
-        <!--<dependency>-->
-        <!--<groupId>com.github.shiver-me-timbers</groupId>-->
-        <!--<artifactId>smt-random</artifactId>-->
-        <!--<version>1.8</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>com.github.shiver-me-timbers</groupId>-->
-        <!--<artifactId>smt-matchers</artifactId>-->
-        <!--<version>1.2</version>-->
-        <!--</dependency>-->
     </dependencies>
 </project>

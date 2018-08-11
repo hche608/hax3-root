@@ -1,11 +1,11 @@
 sudo: false
 language: java
 services:
-  - docker
+- docker
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar'
+  - '$HOME/.m2/repository'
+  - '$HOME/.sonar'
 
 script: "mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
            -Dsonar.organization=hche608-github \
