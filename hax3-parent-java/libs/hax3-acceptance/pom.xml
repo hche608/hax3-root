@@ -17,17 +17,12 @@
 
     <name>${project.artifactId}</name>
 
+    <properties>
+        <cucumber.version>4.2.0</cucumber.version>
+    </properties>
+
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>${sonar.exclusions}</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -35,7 +30,7 @@
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.testOutputDirectory}</additionalClasspathElement>
                     </additionalClasspathElements>
-                    <testClassesDirectory>target/classes</testClassesDirectory>
+                    <testClassesDirectory>${project.build.outputDirectory}</testClassesDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -69,6 +64,16 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.shiver-me-timbers</groupId>
+            <artifactId>smt-random</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.shiver-me-timbers</groupId>
+            <artifactId>smt-matchers</artifactId>
+            <version>1.2</version>
         </dependency>
     </dependencies>
 </project>

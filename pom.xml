@@ -36,18 +36,7 @@
         <deploy.repository.name>hax3-parent</deploy.repository.name>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
         <skip.deployment>false</skip.deployment>
-
-        <!--<aws.sdk.version>1.11.385</aws.sdk.version>-->
-        <!--<aws.log4j2.version>1.1.0</aws.log4j2.version>-->
-        <!--<spring.boot.version>2.0.6.RELEASE</spring.boot.version>-->
-        <!--<jackson.version>2.9.6</jackson.version>-->
-        <!--<junit5.jupiter.version>5.2.0</junit5.jupiter.version>-->
-        <!--<junit5.platform.version>1.2.0</junit5.platform.version>-->
-        <!--<cucumber.version>2.4.0</cucumber.version>-->
-        <!--<mockito.version>2.19.0</mockito.version>-->
-        <!--<sonar.exclusions>**/*Configuration.*,**/*IT*.*</sonar.exclusions>-->
     </properties>
 
     <profiles>
@@ -153,9 +142,9 @@
         </repository>
     </distributionManagement>
 
-    <!--<modules>-->
-        <!--<module>hax3-parent-java</module>-->
-    <!--</modules>-->
+    <modules>
+        <module>hax3-parent-java</module>
+    </modules>
 
     <scm>
         <connection>scm:git:https://github.com/hche608/${project.artifactId}</connection>
