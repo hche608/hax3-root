@@ -75,5 +75,15 @@
             <artifactId>smt-matchers</artifactId>
             <version>1.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.shiver-me-timbers</groupId>
+            <artifactId>smt-waiting-aspect</artifactId>
+            <version>4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.shiver-me-timbers</groupId>
+            <artifactId>smt-waiting-spring</artifactId>
+            <version>4.1</version>
+        </dependency>
     </dependencies>
 </project>

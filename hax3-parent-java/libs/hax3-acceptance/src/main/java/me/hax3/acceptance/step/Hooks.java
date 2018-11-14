@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static java.lang.String.format;
 import static java.util.Collections.emptyList;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 
@@ -23,23 +22,21 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = DEFINED_PORT)
 public class Hooks {
 
-    private final Logger log = LoggerFactory.getLogger(getClass());
+  private final Logger log = LoggerFactory.getLogger(getClass());
 
-    @Autowired(required = false)
-    private List<GenericHolder> holders = emptyList();
+  @Autowired(required = false)
+  private List<GenericHolder> holders = emptyList();
 
-    @Before
-    public void setup(Scenario scenario) {
-        log.info("Scenario Start.");
-        log.info(format("%s Status --> %s", scenario.getName(), scenario.getStatus()));
+  @Before
+  public void setup() {
+    log.info("Scenario Start.");
+  }
+
+  @After
+  public void tearDown(Scenario scenario) {
+    log.info("Scenario End.");
+    if (scenario.isFailed()) {
+      holders.forEach(holder -> log.error(holder.toString()));
     }
-
-    @After
-    public void tearDown(Scenario scenario) {
-        log.info("Scenario End.");
-        if (scenario.isFailed()) {
-            holders.forEach(holder -> log.error(holder.toString()));
-        }
-    }
-
+  }
 }
