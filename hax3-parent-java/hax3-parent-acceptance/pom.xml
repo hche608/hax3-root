@@ -18,6 +18,10 @@
 
     <name>${project.artifactId}</name>
 
+    <properties>
+        <skip.deployment>false</skip.deployment>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
