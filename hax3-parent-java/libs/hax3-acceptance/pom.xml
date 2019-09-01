@@ -5,20 +5,20 @@
     <parent>
         <groupId>me.hax3.parent</groupId>
         <artifactId>hax3-parent-java</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <version>0.1-SNAPSHOT</version>
+        <relativePath>../..</relativePath>
     </parent>
 
     <groupId>me.hax3.acceptance</groupId>
     <artifactId>hax3-acceptance</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
 
     <properties>
-        <cucumber.version>4.4.0</cucumber.version>
+        <cucumber.version>4.7.2</cucumber.version>
     </properties>
 
     <build>
@@ -38,6 +38,20 @@
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <exclusions>
@@ -45,25 +59,19 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
                 <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>ch.qos.logback:logback-classic</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

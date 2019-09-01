@@ -7,7 +7,7 @@
     <parent>
         <groupId>me.hax3.parent</groupId>
         <artifactId>hax3-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>hax3-parent-java</artifactId>
@@ -18,20 +18,22 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <aws.java.sdk.version>1.11.577</aws.java.sdk.version>
-        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <org.zalando.aws.kms.version>4.1</org.zalando.aws.kms.version>
+        <aws.java.sdk.v2.version>1.11.577</aws.java.sdk.v2.version>
+        <spring.boot.version>2.1.7.RELEASE</spring.boot.version>
+        <org.zalando.aws.kms.version>4.2</org.zalando.aws.kms.version>
         <powermock.version>2.0.2</powermock.version>
         <smt-waiting.version>4.1</smt-waiting.version>
+        <cucumber.version>4.7.2</cucumber.version>
         <sonar.exclusions>**/*Application.*,**/*Configuration.*,**/IT*.*,**/*Test.*</sonar.exclusions>
     </properties>
 
     <modules>
-        <module>hax3-parent-acceptance</module>
+        <module>hax3-parent-spring</module>
         <module>hax3-parent-aws</module>
         <!-- lib modules -->
         <module>libs/hax3-acceptance</module>
         <module>libs/hax3-h2gis-embedded</module>
+        <module>libs/hax3-selenium</module>
     </modules>
 
     <build>
@@ -53,6 +55,17 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <rulesUri>file:///Volumes/Data/Repo/hax3-parent/maven-version-rules.xml</rulesUri>
+                </configuration>
+                <executions>
+
+                </executions>
+            </plugin>
             <plugin>
                 <!--Make sure we compile all the Java source as 1.8.-->
                 <groupId>org.apache.maven.plugins</groupId>
@@ -155,6 +168,16 @@
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>ch.qos.logback:logback-classic</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.zalando</groupId>
@@ -196,8 +219,25 @@
 
     <dependencies>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -226,7 +266,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>2.28.2</version>
+            <version>3.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

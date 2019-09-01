@@ -1,6 +1,7 @@
 package unit.me.hax3.acceptance.step;
 
-import cucumber.api.Scenario;
+
+import io.cucumber.core.api.Scenario;
 import me.hax3.acceptance.step.GenericHolder;
 import me.hax3.acceptance.step.Hooks;
 import org.junit.Test;
@@ -14,62 +15,66 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.*;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.BDDMockito.then;
+import static org.mockito.BDDMockito.willAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verifyZeroInteractions;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HooksTest {
 
-  @Mock private List<GenericHolder> holders;
+    @Mock
+    private List<GenericHolder> holders;
 
-  @InjectMocks private Hooks hooks;
+    @InjectMocks
+    private Hooks hooks;
 
-  @Test
-  @SuppressWarnings("unchecked")
-  public void Setup_does_nothing() {
+    @Test
+    @SuppressWarnings("unchecked")
+    public void Setup_does_nothing() {
 
-    // When
-    hooks.setup();
-  }
+        // When
+        hooks.setup();
+    }
 
-  @Test
-  @SuppressWarnings("unchecked")
-  public void Tear_down_will_not_log_any_holders_if_the_scenario_passes() {
+    @Test
+    @SuppressWarnings("unchecked")
+    public void Tear_down_will_not_log_any_holders_if_the_scenario_passes() {
 
-    final Scenario scenario = mock(Scenario.class);
+        final Scenario scenario = mock(Scenario.class);
 
-    // Given
-    given(scenario.isFailed()).willReturn(false);
+        // Given
+        given(scenario.isFailed()).willReturn(false);
 
-    // When
-    hooks.tearDown(scenario);
+        // When
+        hooks.tearDown(scenario);
 
-    // Then
-    verifyZeroInteractions(holders);
-  }
+        // Then
+        verifyZeroInteractions(holders);
+    }
 
-  @Test
-  @SuppressWarnings("unchecked")
-  public void Tear_down_will_log_all_holders_if_the_scenario_fails() {
+    @Test
+    @SuppressWarnings("unchecked")
+    public void Tear_down_will_log_all_holders_if_the_scenario_fails() {
 
-    final Scenario scenario = mock(Scenario.class);
+        final Scenario scenario = mock(Scenario.class);
 
-    // Given
-    given(scenario.isFailed()).willReturn(true);
-    willAnswer(
+        // Given
+        given(scenario.isFailed()).willReturn(true);
+        willAnswer(
             (Answer<Void>)
                 invocation -> {
-                  ((Consumer) invocation.getArgument(0)).accept(mock(GenericHolder.class));
-                  return null;
+                    ((Consumer) invocation.getArgument(0)).accept(mock(GenericHolder.class));
+                    return null;
                 })
-        .given(holders)
-        .forEach(any(Consumer.class));
+            .given(holders)
+            .forEach(any(Consumer.class));
 
-    // When
-    hooks.tearDown(scenario);
+        // When
+        hooks.tearDown(scenario);
 
-    // Then
-    then(holders).should().forEach(any(Consumer.class));
-  }
+        // Then
+        then(holders).should().forEach(any(Consumer.class));
+    }
 }

@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>me.hax3.aws</groupId>
+        <groupId>me.hax3.parent.aws</groupId>
         <artifactId>hax3-parent-aws</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>hax3-parent-aws-lambdas</artifactId>

@@ -1,0 +1,29 @@
+<ruleset comparisonMethod="maven"
+         xmlns="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0
+  http://mojo.codehaus.org/versions-maven-plugin/xsd/rule-2.0.0.xsd">
+    <ignoreVersions>
+        <ignoreVersion type="regex">.*(.|-)?(b|B)eta[-]*[0-9]*</ignoreVersion>
+        <ignoreVersion type="regex">.*(.|-)?(a|A)lpha[-]*[0-9]*</ignoreVersion>
+        <ignoreVersion type="regex">.*(.|-)?(RC|CR)[-]*[0-9]*</ignoreVersion>
+        <ignoreVersion type="regex">.*(.|-)?pr[-]*[0-9]*</ignoreVersion>
+        <ignoreVersion type="regex">.*-M.*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]CR[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]rc[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]beta[0-9\.-]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]alpha[0-9\.-]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]nightly[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*[-_\.]jboss[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*-atlassian-[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">(?i).*-jenkins-[0-9\.]*</ignoreVersion>
+        <ignoreVersion type="regex">.*[-\.]redhat-[0-9]+</ignoreVersion>
+        <ignoreVersion type="regex">\d{4,}.*</ignoreVersion>
+    </ignoreVersions>
+    <rules>
+        <rule groupId="org.springframework.boot" artifactId="spring-boot-starter-test" comparisonMethod="maven">
+            <ignoreVersions>
+            </ignoreVersions>
+        </rule>
+    </rules>
+</ruleset>

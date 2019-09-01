@@ -7,12 +7,12 @@
     <parent>
         <groupId>me.hax3.parent</groupId>
         <artifactId>hax3-parent-java</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>me.hax3.aws</groupId>
+    <groupId>me.hax3.parent.aws</groupId>
     <artifactId>hax3-parent-aws</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -26,10 +26,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!-- Import all the required dependencies and versions for AWS. -->
-                <groupId>com.amazonaws</groupId>
-                <artifactId>aws-java-sdk-bom</artifactId>
-                <version>${aws.java.sdk.version}</version>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>2.7.36</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -46,7 +45,7 @@
             <dependency>
                 <groupId>com.amazonaws</groupId>
                 <artifactId>aws-lambda-java-events</artifactId>
-                <version>2.2.6</version>
+                <version>2.2.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
