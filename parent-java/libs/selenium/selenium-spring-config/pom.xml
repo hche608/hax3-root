@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>me.hax3.selenium</groupId>
-        <artifactId>hax3-selenium</artifactId>
+        <artifactId>selenium</artifactId>
         <version>0.2-SNAPSHOT</version>
     </parent>
 

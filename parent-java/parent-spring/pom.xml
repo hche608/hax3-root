@@ -4,12 +4,11 @@
 
     <parent>
         <groupId>me.hax3.parent</groupId>
-        <artifactId>hax3-parent-java</artifactId>
+        <artifactId>parent-java</artifactId>
         <version>0.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>me.hax3.parent.spring</groupId>
-    <artifactId>hax3-parent-spring</artifactId>
+    <artifactId>parent-spring</artifactId>
     <version>0.2-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
@@ -17,7 +16,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>hax3-parent-acceptance</module>
+        <module>parent-spring-acceptance</module>
     </modules>
 
     <dependencies>

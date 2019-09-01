@@ -3,13 +3,13 @@
 
     <parent>
         <groupId>me.hax3.parent</groupId>
-        <artifactId>hax3-parent-java</artifactId>
+        <artifactId>parent-java</artifactId>
         <version>0.2-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
 
     <groupId>me.hax3.h2</groupId>
-    <artifactId>hax3-h2gis-embedded</artifactId>
+    <artifactId>h2gis-embedded</artifactId>
     <version>0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>

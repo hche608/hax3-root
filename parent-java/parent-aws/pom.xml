@@ -3,12 +3,11 @@
 
     <parent>
         <groupId>me.hax3.parent</groupId>
-        <artifactId>hax3-parent-java</artifactId>
+        <artifactId>parent-java</artifactId>
         <version>0.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>me.hax3.parent.aws</groupId>
-    <artifactId>hax3-parent-aws</artifactId>
+    <artifactId>parent-aws</artifactId>
     <version>0.2-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -16,8 +15,8 @@
     <name>${project.artifactId}</name>
 
     <modules>
-        <module>hax3-parent-aws-lambda</module>
-        <module>hax3-parent-aws-lambdas</module>
+        <module>parent-aws-lambda</module>
+        <module>parent-aws-lambdas</module>
     </modules>
 
     <dependencyManagement>

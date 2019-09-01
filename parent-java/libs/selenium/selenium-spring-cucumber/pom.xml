@@ -3,18 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>me.hax3.parent.spring</groupId>
-        <artifactId>hax3-parent-acceptance</artifactId>
+        <groupId>me.hax3.selenium</groupId>
+        <artifactId>selenium</artifactId>
         <version>0.2-SNAPSHOT</version>
     </parent>
 
-    <groupId>me.hax3.parent.spring.selenium</groupId>
-    <artifactId>hax3-parent-acceptance-selenium</artifactId>
+    <artifactId>selenium-spring-cucumber</artifactId>
     <version>0.2-SNAPSHOT</version>
 
-    <packaging>pom</packaging>
-
-    <name>${project.artifactId}</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -23,14 +20,18 @@
             <version>0.2-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>me.hax3.selenium</groupId>
-            <artifactId>selenium-spring-cucumber</artifactId>
-            <version>0.2-SNAPSHOT</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.26</version>
         </dependency>
         <dependency>
-            <groupId>me.hax3.selenium</groupId>
-            <artifactId>selenium-spring-config</artifactId>
-            <version>0.2-SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
         </dependency>
     </dependencies>
 

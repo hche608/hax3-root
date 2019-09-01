@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>me.hax3.parent.spring</groupId>
-        <artifactId>hax3-parent-spring</artifactId>
+        <groupId>me.hax3.parent</groupId>
+        <artifactId>parent-spring</artifactId>
         <version>0.2-SNAPSHOT</version>
     </parent>
     
-    <artifactId>hax3-parent-acceptance</artifactId>
+    <artifactId>parent-spring-acceptance</artifactId>
     <version>0.2-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -34,12 +34,12 @@
     <dependencies>
         <dependency>
             <groupId>me.hax3.acceptance</groupId>
-            <artifactId>hax3-acceptance</artifactId>
+            <artifactId>cucumber-acceptance</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
     <modules>
-        <module>hax3-parent-acceptance-selenium</module>
+        <module>parent-spring-acceptance-selenium</module>
     </modules>
 </project>

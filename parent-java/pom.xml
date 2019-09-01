@@ -7,7 +7,7 @@
         <version>0.2-SNAPSHOT</version>
     </parent>
 
-    <artifactId>hax3-parent-java</artifactId>
+    <artifactId>parent-java</artifactId>
 
     <packaging>pom</packaging>
 
@@ -25,12 +25,12 @@
     </properties>
 
     <modules>
-        <module>hax3-parent-spring</module>
-        <module>hax3-parent-aws</module>
+        <module>parent-spring</module>
+        <module>parent-aws</module>
         <!-- lib modules -->
-        <module>libs/hax3-acceptance</module>
-        <module>libs/hax3-h2gis-embedded</module>
-        <module>libs/hax3-selenium</module>
+        <module>libs/cucumber-acceptance</module>
+        <module>libs/h2gis-embedded</module>
+        <module>libs/selenium</module>
     </modules>
 
     <build>
