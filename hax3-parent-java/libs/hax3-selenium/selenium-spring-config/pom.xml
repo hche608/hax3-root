@@ -5,11 +5,11 @@
     <parent>
         <groupId>me.hax3.selenium</groupId>
         <artifactId>hax3-selenium</artifactId>
-        <version>0.1</version>
+        <version>0.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>selenium-spring-config</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
 
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>me.hax3.selenium</groupId>
             <artifactId>selenium-finder</artifactId>
-            <version>0.1</version>
+            <version>0.2-SNAPSHOT</version>
             <optional>true</optional>
         </dependency>
         <dependency>
