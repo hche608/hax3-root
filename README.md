@@ -10,3 +10,6 @@ https://malalanayake.wordpress.com/2014/03/10/create-simple-maven-repository-on-
 ###The plugin for github mvn-repo
 https://github.com/github/maven-plugins
 https://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github
+
+How to Release Parent Pom
+```mvn clean release:clean release:prepare -B```
