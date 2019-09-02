@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = FindersConfiguration.class)
+@ContextConfiguration(classes = ITBys.class)
 @SpringBootTest(webEnvironment = NONE)
 public class ITBys {
 

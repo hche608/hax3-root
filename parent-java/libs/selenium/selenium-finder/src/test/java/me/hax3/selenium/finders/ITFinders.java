@@ -15,16 +15,17 @@ import static org.junit.Assert.assertThat;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = FindersConfiguration.class)
+@ContextConfiguration(classes = ITFinders.class)
 @SpringBootTest(webEnvironment = NONE)
 public class ITFinders {
 
     private ChromeDriver driver;
-    private Finders finders = new Finders(driver, new InternalFinders(new Bys(), new Selects()));
+    private Finders finders;
 
     @Before
     public void setUp() {
         driver = new ChromeDriver();
+        finders = new Finders(driver, new InternalFinders(new Bys(), new Selects()));
     }
 
     @After
@@ -37,6 +38,13 @@ public class ITFinders {
 
         // Then
         assertThat(finders, not(nullValue()));
+    }
+
+    @Test
+    public void Can_inject_finders_again() {
+
+        // Then
+        assertThat(new Finders(driver), not(nullValue()));
     }
 
 }

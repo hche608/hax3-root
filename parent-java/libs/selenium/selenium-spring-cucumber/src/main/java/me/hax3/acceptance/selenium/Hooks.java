@@ -1,4 +1,4 @@
-package me.hax3.selenium.acceptance;
+package me.hax3.acceptance.selenium;
 
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
@@ -14,7 +14,7 @@ public class Hooks {
     private final int width;
     private final int height;
 
-    public Hooks(Browser browser, @Value("${screen.width}") int width, @Value("${screen.width}") int height) {
+    public Hooks(Browser browser, @Value("${screen.width}") int width, @Value("${screen.height}") int height) {
         this.browser = browser;
         this.width = width;
         this.height = height;

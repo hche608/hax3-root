@@ -1,5 +1,6 @@
 package me.hax3.selenium.spring;
 
+import me.hax3.selenium.finders.Finders;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,6 +19,20 @@ import static java.lang.String.format;
 @Configuration
 @ComponentScan
 public class SeleniumConfiguration {
+
+    private static ChromeOptions headlessChromeOptions() {
+        final ChromeOptions options = new ChromeOptions();
+        options.addArguments("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36");
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--user-data-dir=/tmp/user-data");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--data-path=/tmp/data-path");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--homedir=/tmp");
+        options.addArguments("--disk-cache-dir=/tmp/cache-dir");
+        return options;
+    }
 
     @Bean(destroyMethod = "quit")
     public WebDriver webDriver(@Value("${web.driver:chrome-headless}") String webDriver) {
@@ -57,22 +72,13 @@ public class SeleniumConfiguration {
     }
 
     @Bean
-    public WaiterAspect waiterAspect() {
-        return new WaiterAspect();
+    public Finders finders(WebDriver webDriver) {
+        return new Finders(webDriver);
     }
 
-    private static ChromeOptions headlessChromeOptions() {
-        final ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36");
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--user-data-dir=/tmp/user-data");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--data-path=/tmp/data-path");
-        options.addArguments("--ignore-certificate-errors");
-        options.addArguments("--homedir=/tmp");
-        options.addArguments("--disk-cache-dir=/tmp/cache-dir");
-        return options;
+    @Bean
+    public WaiterAspect waiterAspect() {
+        return new WaiterAspect();
     }
 
 }

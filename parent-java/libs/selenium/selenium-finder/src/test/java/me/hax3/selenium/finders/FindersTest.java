@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -697,5 +698,17 @@ public class FindersTest {
 
         // Then
         then(element).should().click();
+    }
+
+    @Test
+    public void for_coverage() {
+
+        // Given
+
+        // When
+        final Finders finders = new Finders(driver);
+
+        // Then
+        assertThat(finders, is(instanceOf(Finders.class)));
     }
 }

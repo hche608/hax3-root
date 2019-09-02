@@ -1,6 +1,7 @@
-package me.hax3.selenium.acceptance;
+package unit.me.hax3.acceptance.selenium;
 
 import io.cucumber.core.api.Scenario;
+import me.hax3.acceptance.selenium.Hooks;
 import me.hax3.selenium.finders.Browser;
 import org.junit.Before;
 import org.junit.Test;

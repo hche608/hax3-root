@@ -11,6 +11,10 @@ public class Finders {
     private final WebDriver driver;
     private final InternalFinders internalFinders;
 
+    public Finders(WebDriver driver) {
+        this(driver, new InternalFinders(new Bys(), new Selects()));
+    }
+
     public Finders(WebDriver driver, InternalFinders internalFinders) {
         this.driver = driver;
         this.internalFinders = internalFinders;

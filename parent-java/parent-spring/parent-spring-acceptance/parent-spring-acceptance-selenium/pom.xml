@@ -19,17 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>me.hax3.selenium</groupId>
-            <artifactId>selenium-finder</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>me.hax3.selenium</groupId>
             <artifactId>selenium-spring-cucumber</artifactId>
-            <version>0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>me.hax3.selenium</groupId>
-            <artifactId>selenium-spring-config</artifactId>
             <version>0.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
