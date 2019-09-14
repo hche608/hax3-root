@@ -30,8 +30,10 @@
         <module>parent-aws</module>
         <!-- lib modules -->
         <module>libs/cucumber-acceptance</module>
+        <module>libs/cucumber-selenium-acceptance</module>
         <module>libs/h2gis-embedded</module>
-        <module>libs/selenium</module>
+        <module>libs/selenium-spring</module>
+        <module>libs/selenium-finder</module>
     </modules>
 
     <build>

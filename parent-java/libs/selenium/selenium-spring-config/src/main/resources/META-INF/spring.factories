@@ -1,1 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=me.hax3.selenium.spring.SeleniumConfiguration

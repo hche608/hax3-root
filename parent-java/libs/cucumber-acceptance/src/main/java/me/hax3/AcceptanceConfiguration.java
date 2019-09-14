@@ -6,6 +6,7 @@ import shiver.me.timbers.waiting.WaiterAspect;
 
 @Configuration
 public class AcceptanceConfiguration {
+
     @Bean
     public WaiterAspect waiterAspect() {
         return new WaiterAspect();

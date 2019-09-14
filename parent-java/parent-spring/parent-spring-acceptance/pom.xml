@@ -40,6 +40,6 @@
     </dependencies>
 
     <modules>
-        <module>parent-spring-acceptance-selenium</module>
+        <module>parent-spring-selenium-acceptance</module>
     </modules>
 </project>
