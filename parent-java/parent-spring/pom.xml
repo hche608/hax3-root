@@ -9,7 +9,6 @@
     </parent>
 
     <artifactId>parent-spring</artifactId>
-    <version>0.2-SNAPSHOT</version>
 
     <name>${project.artifactId}</name>
 

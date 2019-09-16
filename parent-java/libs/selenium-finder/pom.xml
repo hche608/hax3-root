@@ -10,10 +10,8 @@
         <relativePath>../..</relativePath>
     </parent>
 
-
     <groupId>me.hax3.selenium</groupId>
     <artifactId>selenium-finder</artifactId>
-    <version>0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -26,8 +24,28 @@
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>okhttp</artifactId>
+                    <groupId>com.squareup.okhttp3</groupId>
+                </exclusion>
             </exclusions>
             <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.11.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>okio</artifactId>
+                    <groupId>com.squareup.okio</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okio</groupId>
+            <artifactId>okio</artifactId>
+            <version>1.14.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>

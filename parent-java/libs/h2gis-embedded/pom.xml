@@ -10,7 +10,6 @@
 
     <groupId>me.hax3.h2</groupId>
     <artifactId>h2gis-embedded</artifactId>
-    <version>0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 

@@ -12,7 +12,6 @@
 
     <groupId>me.hax3.selenium</groupId>
     <artifactId>selenium-spring</artifactId>
-    <version>0.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 

@@ -8,7 +8,6 @@
     </parent>
 
     <artifactId>parent-aws</artifactId>
-    <version>0.2-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
