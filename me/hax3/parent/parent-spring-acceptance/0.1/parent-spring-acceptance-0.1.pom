@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>me.hax3.parent</groupId>
+        <artifactId>parent-spring</artifactId>
+        <version>0.1</version>
+    </parent>
+    
+    <artifactId>parent-spring-acceptance</artifactId>
+
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+
+    <properties>
+        <skip.deployment>false</skip.deployment>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <dependenciesToScan>
+                        <dependenciesToScan>me.hax3.acceptance:cucumber-acceptance</dependenciesToScan>
+                    </dependenciesToScan>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${project.build.testOutputDirectory}</additionalClasspathElement>
+                    </additionalClasspathElements>
+                    <testClassesDirectory>${project.build.outputDirectory}</testClassesDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <configuration>
+                    <skip>${skip.deployment}</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>me.hax3.acceptance</groupId>
+            <artifactId>cucumber-acceptance</artifactId>
+            <version>0.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mockito-core</artifactId>
+                    <groupId>org.mockito</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>parent-spring-selenium-acceptance</module>
+    </modules>
+</project>
