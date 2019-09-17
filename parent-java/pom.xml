@@ -60,7 +60,8 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
-                    <rulesUri>file:///Volumes/Data/Repo/hax3-parent/maven-version-rules.xml</rulesUri>
+                    <rulesUri>https://raw.githubusercontent.com/hche608/hax3-parent/master/maven-version-rules.xml
+                    </rulesUri>
                 </configuration>
                 <executions>
 
@@ -290,14 +291,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>mvn-repo</id>
-            <url>https://github.com/hche608/hax3-parent/raw/mvn-repo/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
 </project>
