@@ -1,8 +1,8 @@
 package me.hax3.acceptance.selenium.steps;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import io.cucumber.core.api.Scenario;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import me.hax3.selenium.finders.Browser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +20,13 @@ public class Hooks {
         this.height = height;
     }
 
+    @cucumber.api.java.Before
     @Before
     public void setup() {
         browser.setWindowSize(width, height);
     }
 
+    @cucumber.api.java.After
     @After
     public void tearDown(Scenario scenario) {
         log.info("Scenario End.");

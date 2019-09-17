@@ -1,10 +1,9 @@
 package me.hax3.acceptance.steps;
 
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import io.cucumber.core.api.Scenario;
-
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import me.hax3.ITCucumber;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -29,11 +28,13 @@ public class Hooks {
     @Autowired(required = false)
     private List<GenericHolder> holders = emptyList();
 
+    @cucumber.api.java.Before
     @Before
     public void setup() {
         log.info("Scenario Start.");
     }
 
+    @cucumber.api.java.After
     @After
     public void tearDown(Scenario scenario) {
         log.info("Scenario End.");
