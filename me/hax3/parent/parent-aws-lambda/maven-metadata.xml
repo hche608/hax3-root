@@ -3,10 +3,9 @@
   <groupId>me.hax3.parent</groupId>
   <artifactId>parent-aws-lambda</artifactId>
   <versioning>
-    <release>0.1</release>
     <versions>
-      <version>0.1</version>
+      <version>0.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20190917081215</lastUpdated>
+    <lastUpdated>20190927074733</lastUpdated>
   </versioning>
 </metadata>
