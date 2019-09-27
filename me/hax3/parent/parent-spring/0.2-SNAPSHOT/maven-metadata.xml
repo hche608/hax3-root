@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>me.hax3.parent</groupId>
+  <artifactId>parent-spring</artifactId>
+  <version>0.2-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20190927.074515</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20190927074515</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.2-20190927.074515-1</value>
+        <updated>20190927074515</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
