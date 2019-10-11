@@ -28,6 +28,7 @@ public class ScenarioSteps {
     public void iRunTheScenarioWithSelenium() {
         log.info("Run: I run the scenario");
         webDriver.get("https://www.google.com");
+        log.info(webDriver.getTitle());
         webDriver.findElement(By.xpath("//div[contains(text(), \"Google offered in:\")]"));
     }
 
