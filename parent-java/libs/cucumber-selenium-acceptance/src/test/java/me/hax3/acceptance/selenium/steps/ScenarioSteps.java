@@ -32,11 +32,11 @@ public class ScenarioSteps {
     @When("I run the scenario with selenium")
     public void iRunTheScenarioWithSelenium() {
         log.info("Run: I run the scenario");
-        webDriver.get("https://www.google.co.nz");
+        webDriver.get("https://hche608.github.io/");
         log.info(webDriver.getTitle());
-        final By xpath = By.xpath("//div[contains(text(), \"Google offered in:\")]");
+        final By xpath = By.id("education");
         webDriverWait.until(visibilityOfElementLocated(xpath));
-        webDriver.findElement(xpath);
+        log.info(webDriver.findElement(xpath).getText());
     }
 
     @Then("^the scenario should run$")

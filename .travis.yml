@@ -4,6 +4,9 @@ jdk: openjdk8
 
 addons:
   chrome: stable
+  apt:
+    packages:
+      - chromium-chromedriver
   sonarcloud:
     organization: "hche608-github"
     token:
@@ -16,8 +19,8 @@ cache:
 
 before_install:
   - java -version
-  - sudo apt-get update
-  - sudo apt-get install chromium-chromedriver
+  - google-chrome --version
+  - chromedriver --version
 
 script:
   - mvn clean verify sonar:sonar
