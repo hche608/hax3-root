@@ -4,7 +4,7 @@ package me.hax3.acceptance.selenium.steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import me.hax3.selenium.finders.Finders;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +14,9 @@ public class ScenarioSteps {
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     private final WebDriver webDriver;
-    private final Finders finders;
 
-    public ScenarioSteps(WebDriver webDriver, Finders finders) {
+    public ScenarioSteps(WebDriver webDriver) {
         this.webDriver = webDriver;
-        this.finders = finders;
     }
 
     @Given("^a scenario has been written$")
@@ -30,7 +28,7 @@ public class ScenarioSteps {
     public void iRunTheScenarioWithSelenium() {
         log.info("Run: I run the scenario");
         webDriver.get("https://www.google.com");
-        finders.findByText("div", "Google offered in:  ");
+        webDriver.findElement(By.xpath("//div[contains(text(), \"Google offered in:\")]"));
     }
 
     @Then("^the scenario should run$")
