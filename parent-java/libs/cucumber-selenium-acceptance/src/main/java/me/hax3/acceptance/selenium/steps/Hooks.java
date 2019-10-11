@@ -20,13 +20,11 @@ public class Hooks {
         this.height = height;
     }
 
-    @cucumber.api.java.Before
     @Before
     public void setup() {
         browser.setWindowSize(width, height);
     }
 
-    @cucumber.api.java.After
     @After
     public void tearDown(Scenario scenario) {
         log.info("Scenario End.");

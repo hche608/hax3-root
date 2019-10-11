@@ -19,7 +19,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.BDDMockito.willAnswer;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoInteractions;
 
 @RunWith(MockitoJUnitRunner.class)
 public class HooksTest {
@@ -51,7 +51,7 @@ public class HooksTest {
         hooks.tearDown(scenario);
 
         // Then
-        verifyZeroInteractions(holders);
+        verifyNoInteractions(holders);
     }
 
     @Test

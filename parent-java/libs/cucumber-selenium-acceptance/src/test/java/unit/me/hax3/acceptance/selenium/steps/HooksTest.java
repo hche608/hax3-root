@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static shiver.me.timbers.data.random.RandomBytes.someBytes;
 import static shiver.me.timbers.data.random.RandomIntegers.someInteger;
 
@@ -99,7 +99,7 @@ public class HooksTest {
         hooks.tearDown(scenario);
 
         // Then
-        verifyZeroInteractions(browser);
+        verifyNoInteractions(browser);
     }
 
 }

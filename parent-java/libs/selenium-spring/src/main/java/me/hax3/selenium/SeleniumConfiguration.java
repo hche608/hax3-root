@@ -57,9 +57,37 @@ public class SeleniumConfiguration {
 
     private static ChromeOptions headlessChromeOptions() {
         final ChromeOptions options = new ChromeOptions();
-        options.addArguments("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36");
         options.addArguments("--headless");
+
+        options.addArguments("--hide-scrollbars");
+        options.addArguments("--mute-audio");
+
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-extensions");
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-background-networking");
+        options.addArguments("--disable-background-timer-throttling");
+        options.addArguments("--disable-client-side-phishing-detection");
+        options.addArguments("--disable-default-apps");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-hang-monitor");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-prompt-on-repost");
+        options.addArguments("--disable-sync");
+        options.addArguments("--disable-translate");
+        options.addArguments("--metrics-recording-only");
+        options.addArguments("--no-first-run");
+        options.addArguments("--safebrowsing-disable-auto-update");
+
+        options.addArguments("--no-cache");
+        options.addArguments("--user-data-dir=/tmp/user-data");
+        options.addArguments("--single-process");
+        options.addArguments("--data-path=/tmp/data-path");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--homedir=/tmp");
+        options.addArguments("--disk-cache-dir=/tmp/cache-dir");
+        options.addArguments("user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36");
         options.setAcceptInsecureCerts(true);
         return options;
     }

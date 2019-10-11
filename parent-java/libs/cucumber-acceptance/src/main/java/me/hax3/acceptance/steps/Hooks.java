@@ -28,13 +28,11 @@ public class Hooks {
     @Autowired(required = false)
     private List<GenericHolder> holders = emptyList();
 
-    @cucumber.api.java.Before
     @Before
     public void setup() {
         log.info("Scenario Start.");
     }
 
-    @cucumber.api.java.After
     @After
     public void tearDown(Scenario scenario) {
         log.info("Scenario End.");
