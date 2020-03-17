@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/hche608/hax3-parent.svg?branch=master)](https://travis-ci.org/hche608/hax3-parent)
+[![Build Status](https://travis-ci.com/hche608/hax3-parent.svg?branch=master)](https://travis-ci.org/hche608/hax3-parent)
 ![](https://sonarcloud.io/api/project_badges/measure?project=me.hax3.parent%3Ahax3-parent&metric=alert_status)
 ![](https://sonarcloud.io/api/project_badges/measure?project=me.hax3.parent%3Ahax3-parent&metric=coverage)
 # hax3-parent
