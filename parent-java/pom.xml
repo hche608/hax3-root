@@ -19,7 +19,7 @@
         <aws.java.sdk.v2.version>1.11.577</aws.java.sdk.v2.version>
         <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
         <org.zalando.aws.kms.version>5.0</org.zalando.aws.kms.version>
-        <powermock.version>2.0.4</powermock.version>
+        <powermock.version>2.0.5</powermock.version>
         <smt-waiting.version>4.1</smt-waiting.version>
         <cucumber.version>4.8.0</cucumber.version>
         <sonar.exclusions>**/*Application.*,**/*Configuration.*,**/IT*.*,**/*Test.*</sonar.exclusions>
